@@ -2,12 +2,12 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://yoursite.com
-title: My Octopress Blog
-subtitle: A blogging framework for hackers.
-author: Your Name
+url: http://theguild.nl
+title: The Guild
+subtitle: "The Guild of Artisans' Masterclass in Development and Geekery"
+author: The Guild Team
 simple_search: http://google.com/search
-description:
+description: "The Guild of Artisans' Masterclass in Development and Geekery"
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
@@ -16,7 +16,7 @@ description:
 date_format: "ordinal"
 
 # RSS / Email (optional) subscription links (change if using something like Feedburner)
-subscribe_rss: /atom.xml
+subscribe_rss: /feed.xml
 subscribe_email:
 # RSS feeds can list your email address if you like
 email:
