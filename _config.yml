@@ -2,7 +2,7 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://theguild.nl
+url: http://kabisaict.github.com/theguild
 title: The Guild
 subtitle: "The Guild of Artisans' Masterclass in Development and Geekery"
 author: The Guild Team
@@ -16,7 +16,7 @@ description: "The Guild of Artisans' Masterclass in Development and Geekery"
 date_format: "ordinal"
 
 # RSS / Email (optional) subscription links (change if using something like Feedburner)
-subscribe_rss: /feed.xml
+subscribe_rss: /theguild/atom.xml
 subscribe_email:
 # RSS feeds can list your email address if you like
 email:
@@ -26,10 +26,10 @@ email:
 # ----------------------- #
 
 # If publishing to a subdirectory as in http://site.com/project set 'root: /project'
-root: /
+root: /theguild
 permalink: /blog/:year/:month/:day/:title/
 source: source
-destination: public
+destination: public/theguild
 plugins: plugins
 code_dir: downloads/code
 category_dir: blog/categories
