@@ -2,9 +2,9 @@
 project_type = :stand_alone
 
 # Publishing paths
-http_path = "/theguild/"
-http_images_path = "/theguild/images"
-http_fonts_path = "/theguild/fonts"
+http_path = "/"
+http_images_path = "/images"
+http_fonts_path = "/fonts"
 css_dir = "public/theguild/stylesheets"
 
 # Local development paths
