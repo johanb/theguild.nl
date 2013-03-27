@@ -1,0 +1,26 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    adsf (1.1.1)
+      rack (>= 1.0.0)
+    colored (1.2)
+    cri (2.3.0)
+      colored (>= 1.2)
+    listen (0.7.3)
+    nanoc (3.6.2)
+      cri (~> 2.3)
+    rack (1.5.2)
+    rb-fsevent (0.9.3)
+    sass (3.2.7)
+    zurb-foundation (4.0.9)
+      sass (>= 3.2.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  adsf
+  listen
+  nanoc (~> 3.6)
+  rb-fsevent (~> 0.9)
+  zurb-foundation
