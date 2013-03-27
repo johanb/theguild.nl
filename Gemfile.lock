@@ -12,6 +12,7 @@ GEM
     rack (1.5.2)
     rb-fsevent (0.9.3)
     sass (3.2.7)
+    systemu (2.5.2)
     zurb-foundation (4.0.9)
       sass (>= 3.2.0)
 
@@ -23,4 +24,5 @@ DEPENDENCIES
   listen
   nanoc (~> 3.6)
   rb-fsevent (~> 0.9)
+  systemu
   zurb-foundation
