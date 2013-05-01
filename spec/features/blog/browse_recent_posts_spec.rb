@@ -9,7 +9,7 @@ describe "Browse recent blog posts" do
   end
 
   context 'when there is a post' do
-    let!(:post) { create :post, title: 'Example post' }
+    let!(:post) { create :post, title: 'Example post', body: 'Bla' }
 
     def have_post(post_title)
       have_css('.post .post_title', text: post_title)
@@ -25,11 +25,9 @@ describe "Browse recent blog posts" do
       expect(page).to have_post('Example post')
     end
 
-    it 'links each post title to a single post page' do
+    it 'does not show the post body on the frontpage' do
       visit '/'
-      click_link 'Example post'
-      expect(current_path).to match(%r{/blog/\d+})
-      expect(page).to have_post('Example post')
+      expect(page).to_not have_content('Bla')
     end
   end
 

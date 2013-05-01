@@ -1,1 +1,3 @@
-= render @post
+%div[@post]
+  %h2.post_title= link_to @post.title, @post
+  .post_content= @post.body
