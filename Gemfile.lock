@@ -162,6 +162,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   factory_girl_rails (~> 4.2)
   foreman
+  haml
   haml-rails
   jbuilder (~> 1.0.1)
   jquery-rails

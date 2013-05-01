@@ -48,12 +48,19 @@ gem 'unicorn'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'haml-rails'
+gem 'haml'
 
 gem 'foreman'
 
-group :test do
+group :development do
+  gem 'haml-rails'
+end
+
+group :development, :test do
   gem 'rspec-rails',        '~> 2.13'
+end
+
+group :test do
   gem 'capybara',           '~> 2.1'
   gem 'factory_girl_rails', '~> 4.2'
   gem 'shoulda-matchers'
