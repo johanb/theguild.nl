@@ -1,2 +1,4 @@
-%p
-  There are no blog posts yet.
+- if @posts.any?
+  = render @posts
+- else
+  %p There are no blog posts yet.
