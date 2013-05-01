@@ -42,8 +42,8 @@ end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
-# Use thin as web server
-gem 'thin'
+# Use unicorn as web server
+gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
@@ -52,6 +52,8 @@ gem 'thin'
 # gem 'debugger', group: [:development, :test]
 
 gem 'haml-rails'
+
+gem 'foreman'
 
 group :test do
   gem 'rspec-rails',        '~> 2.13'
