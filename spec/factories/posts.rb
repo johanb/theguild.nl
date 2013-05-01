@@ -2,7 +2,14 @@
 
 FactoryGirl.define do
   factory :post do
-    title "MyString"
+    sequence :title do |n|
+      "Example post title #{n}"
+    end
+
+    sequence :summary do |n|
+      "Example post summary #{n}"
+    end
+
     body "MyText"
   end
 end
