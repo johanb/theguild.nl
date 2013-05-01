@@ -19,3 +19,4 @@
 crash.log
 /output
 .env
+config/database.yml
