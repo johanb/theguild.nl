@@ -1,3 +1,4 @@
 %div[@post]
-  %h2.post_title= link_to @post.title, @post
+  %h2.post_title= @post.title
+  %footer= time_tag @post.created_at.to_date, pubdate: true, class: 'post_date'
   .post_content= markdown @post.body
