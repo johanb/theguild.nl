@@ -24,6 +24,13 @@ describe "Browse recent blog posts" do
       visit '/'
       expect(page).to have_post('Example post')
     end
+
+    it 'links each post title to a single post page' do
+      visit '/'
+      click_link 'Example post'
+      expect(current_path).to match(%r{/blog/\d+})
+      expect(page).to have_post('Example post')
+    end
   end
 
   context 'when there are multiple posts' do
