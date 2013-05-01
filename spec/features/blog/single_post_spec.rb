@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe 'Reading a single post' do
-  let!(:post) { create :post, title: 'Example post', body: 'Bla' }
+  let!(:post) { create :post, title: 'Example post', body: 'Blah en *narf*' }
 
   it 'links each post title to a single post page' do
     visit '/'
@@ -14,7 +14,7 @@ describe 'Reading a single post' do
     click_link 'Example post'
     within '.post' do
       expect(page).to have_css('.post_title', text: 'Example post')
-      expect(page).to have_css('.post_content', text: 'Bla')
+      expect(page).to have_css('.post_content', text: 'Blah en <em>narf</em>')
     end
   end
 end
