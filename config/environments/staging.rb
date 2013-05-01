@@ -80,10 +80,10 @@ Guild::Application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    user_name:      ENV.fetch('SENDGRID_USERNAME'),
-    password:       ENV.fetch('SENDGRID_PASSWORD'),
-    address:        'smtp.sendgrid.net',
-    port:           587,
+    user_name:      'theguild-nl-53efda47edbf6012',
+    password:       '175efd58c4efcc1e',
+    address:        'mailtrap.io',
+    port:           '2525',
     authentication: :plain
   }
 end
