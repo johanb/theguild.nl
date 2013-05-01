@@ -19,7 +19,7 @@ development:
   encoding: unicode
   database: guild_development
   pool: 5
-  username: arjan
+  username: guild
   password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -48,14 +48,5 @@ test:
   encoding: unicode
   database: guild_test
   pool: 5
-  username: arjan
-  password:
-
-production:
-  adapter: postgresql
-  encoding: unicode
-  database: guild_production
-  pool: 5
   username: guild
   password:
-
