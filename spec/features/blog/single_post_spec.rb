@@ -14,7 +14,10 @@ describe 'Reading a single post' do
     click_link 'Example post'
     within '.post' do
       expect(page).to have_css('.post_title', text: 'Example post')
-      expect(page).to have_css('.post_content', text: 'Blah en <em>narf</em>')
+
+      within('.post_content') do
+        expect(page).to have_content('Blah en narf')
+      end
     end
   end
 end
