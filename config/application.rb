@@ -24,5 +24,10 @@ module Guild
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+
+    # Disable booting the application when precompiling assets. This is
+    # required for deployments to Heroku, as the database will not be available
+    # yet when you deploy your apps (and hence initialization will fail).
+    config.assets.initialize_on_precompile = false
   end
 end
