@@ -1,0 +1,22 @@
+---
+language: ruby
+
+notifications:
+  email: false
+  
+rvm:
+  - 2.0.0
+
+env:
+  global:
+    - DISPLAY=":99.0"
+  
+script:
+  - "bundle exec rake spec"
+  
+before_script:
+  - cp config/database.travis.yml config/database.yml
+  - psql -c 'create database theguild_test;' -U postgres
+  - bundle exec rake db:migrate
+  - "sh -e /etc/init.d/xvfb start"
+
