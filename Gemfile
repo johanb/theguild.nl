@@ -15,6 +15,9 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 
+# For Markdown Glory
+gem 'kramdown'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -48,14 +51,21 @@ gem 'unicorn'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'haml-rails'
+gem 'haml'
 
 gem 'foreman'
 
-group :test do
+group :development do
+  gem 'haml-rails'
+end
+
+group :development, :test do
   gem 'rspec-rails',        '~> 2.13'
-  gem 'capybara',           '~> 2.1'
   gem 'factory_girl_rails', '~> 4.2'
+end
+
+group :test do
+  gem 'capybara',           '~> 2.1'
   gem 'shoulda-matchers'
   gem 'email_spec'
 end
