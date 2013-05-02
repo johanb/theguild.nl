@@ -17,7 +17,7 @@ describe 'Mailinglist subscription' do
   it "can show a 'subscribed' page" do
     visit '/subscribed'
 
-    expect(page).to have_content('You’ve subscribed')
+    expect(page).to have_content("You've subscribed")
   end
 
 end
