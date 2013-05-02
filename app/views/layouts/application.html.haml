@@ -5,6 +5,7 @@
     %title The Guild
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
+    = auto_discovery_link_tag :atom, feed_url
     = csrf_meta_tags
 
   %body
@@ -20,3 +21,5 @@
         - flashes.each do |flash_type, message|
           %div{ class: flash_type }= message
     = yield
+
+    = render 'subscription'
