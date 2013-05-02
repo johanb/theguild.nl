@@ -39,8 +39,18 @@ header {
 .main {
   @include grid-row;
 
+  margin-top: 2em;
+
   section.content {
-    @include grid-column(12);
+    @include grid-column(9);
+  }
+
+  section.subscription {
+    @include grid-column(3);
+
+    h2 {
+      font-size: 1em;
+    }
   }
 }
 
