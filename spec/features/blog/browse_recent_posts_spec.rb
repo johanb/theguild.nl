@@ -32,7 +32,11 @@ describe "Browse recent blog posts" do
   end
 
   context 'when there are multiple posts' do
-    let!(:posts) { create_list :post, 2 }
+    let!(:posts) { create_list :post, 3 }
+
+    def have_highlighted_post()
+      have_css('.post.highlight')
+    end
 
     def have_posts(number_of_posts)
       have_css('.post', count: number_of_posts)
@@ -40,7 +44,8 @@ describe "Browse recent blog posts" do
 
     it 'shows all posts' do
       visit '/'
-      expect(page).to have_posts(2)
+      expect(page).to have_highlighted_post
+      expect(page).to have_posts(3)
     end
 
     it 'highlights the first post with a special summary' do
