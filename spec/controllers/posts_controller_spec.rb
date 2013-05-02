@@ -21,4 +21,10 @@ describe PostsController do
       expect(assigns(:post)).to eql(post)
     end
   end
+
+  describe 'GET new' do
+    When { get :new }
+    Then { expect(subject).to render_template 'new' }
+    Then { expect(subject).to respond_with :success }
+  end
 end
