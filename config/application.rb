@@ -29,11 +29,5 @@ module Guild
     # required for deployments to Heroku, as the database will not be available
     # yet when you deploy your apps (and hence initialization will fail).
     config.assets.initialize_on_precompile = false
-
-    # Add the fonts path
-    config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
-
-    # Precompile additional assets
-    config.assets.precompile += %w( .svg .eot .woff .ttf )
   end
 end

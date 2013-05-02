@@ -1,13 +1,11 @@
 .posts
-  - if @posts.any?
-    - post = @posts.shift
-    %article[post, 'highlighted']
-      %h2.post_title= link_to post.title, post, rel: 'bookmark'
-      .pubdate= time_tag post.created_at.to_date, pubdate: true, class: 'post_date'
-      .post_summary= markdown post.summary
+  - if @latest_post || @posts.any?
+    - if @latest_post
+      = render partial: 'latest_post', object: @latest_post, as: :post
 
-    %ul.archive
-      = render @posts
+    - if @posts.any?
+      %ul.archive
+        = render @posts
 
   - else
     %p There are no blog posts yet.
