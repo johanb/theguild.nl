@@ -1,5 +1,10 @@
 %section.events
-  - if @upcoming_event
-    = @upcoming_event.name
+  - if @upcoming_event || @recent_events.any?
+    %ul
+      - if @upcoming_event
+        %li[@upcoming_event, :upcoming]= @upcoming_event.name
+      - @recent_events.each do |event|
+        %li[event]= event.name
+
   - else
     There are no events yet.

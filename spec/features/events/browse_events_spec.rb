@@ -12,10 +12,6 @@ describe 'Listing events' do
     end
   end
 
-  # Scenario: Upcoming event scheduled
-  #   Given there are upcoming events
-  #   When I go to the home page
-  #   Then I should see the earliest upcoming event
   context 'Upcoming events scheduled' do
     let(:first_event_name) { 'Some name of upcoming event' }
     let!(:first)           { create(:event, name: first_event_name, scheduled_at: Date.today + 1) }
@@ -24,15 +20,32 @@ describe 'Listing events' do
     it 'displays the earliest upcoming event' do
       visit '/'
 
-      within 'section.events' do
+      within '.events .upcoming_event' do
         expect(page).to have_content(first_event_name)
       end
     end
   end
 
+  # Scenario: Showing passed events
+  # Given there are many events in the past
+  # When I go to the home page
+  # Then I should see the 5 latest events
+  context 'Showing passed events' do
+    let!(:events)         { Array.new(6) { |i| create(:event, scheduled_at: (i + 1).days.ago) } }
+    let!(:earliest_event) { events.last }
+
+    it 'displays the 5 latest events' do
+      visit '/'
+
+      expect(page).to have_css('.events .event', count: 5)
+      expect(page).to have_no_css("#event_#{earliest_event.id}")
+    end
+  end
+
+
 
   context 'Latest event' do
 
   end
-  context 'Speficic event'
+  context 'Specific event'
 end

@@ -5,6 +5,7 @@ describe PostsController do
 
   before do
     Event.stub(:next_upcoming).and_return(event_stub)
+    Event.stub(:recent).and_return([])
   end
 
   describe 'GET index' do
@@ -21,6 +22,13 @@ describe PostsController do
     it 'assigns posts' do
       make_request
       expect(assigns(:posts)).to_not be_nil
+    end
+
+    it 'assigns upcoming event' do
+      events = []
+      Event.should_receive(:recent).and_return(events)
+      make_request
+      expect(assigns(:recent_events)).to be(events)
     end
 
     it 'assigns upcoming event' do
