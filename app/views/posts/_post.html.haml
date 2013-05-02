@@ -1,5 +1,5 @@
 %article[post]
   %h2.post_title= link_to post.title, post, rel: 'bookmark'
   %footer= time_tag post.created_at.to_date, pubdate: true, class: 'post_date'
-  - if post_counter == 1
+  - if post_counter == 0
     .post_summary= markdown post.summary
