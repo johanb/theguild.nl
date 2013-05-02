@@ -12,7 +12,7 @@ describe "Browse recent blog posts" do
     let!(:post) { create :post, title: 'Example post', body: 'Bla' }
 
     def have_post(post_title)
-      have_css('.post .post_title', text: post_title)
+      have_css('.highlighted_post .post_title', text: post_title)
     end
 
     it 'no longer shows the placeholder message' do
@@ -35,7 +35,7 @@ describe "Browse recent blog posts" do
     let!(:posts) { create_list :post, 3 }
 
     def have_highlighted_post()
-      have_css('.post.highlight')
+      have_css('.highlighted_post')
     end
 
     def have_posts(number_of_posts)
@@ -45,12 +45,12 @@ describe "Browse recent blog posts" do
     it 'shows all posts' do
       visit '/'
       expect(page).to have_highlighted_post
-      expect(page).to have_posts(3)
+      expect(page).to have_posts(2)
     end
 
     it 'highlights the first post with a special summary' do
       visit '/'
-      expect(page).to have_css(".post#post_#{posts.first.id} .post_summary", count: 1)
+      expect(page).to have_css("#highlighted_post_#{posts.first.id} .post_summary", count: 1)
     end
   end
 end
