@@ -23,10 +23,18 @@
           The Guild of Software Artisans'
           %span Masterclass in Development and Geekery
 
+    - if flash[:notice]
+      .flash#flash-notice= flash[:notice]
+    - if flash[:alert]
+      .flash#flash-alert= flash[:alert]
+
     .main
       %section.content
         = yield
-      = render 'subscription'
+
+      %aside.sidebar
+        = render 'subscription'
+        = render 'account'
 
     = render 'footer'
 

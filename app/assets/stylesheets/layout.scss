@@ -36,6 +36,21 @@ header {
   }
 }
 
+.flash {
+  @include grid-row;
+  padding: 8px;
+  margin-top: 2em;
+  border-radius: 6px;
+
+  &#flash-notice {
+    background-color: #eaffea;
+  }
+
+  &#flash-alert {
+    background-color: #ffeaea;
+  }
+}
+
 .main {
   @include grid-row;
 
@@ -49,11 +64,17 @@ header {
     }
   }
 
-  section.subscription {
+  aside.sidebar {
     @include grid-column(3);
 
     h2 {
       font-size: 1em;
+    }
+
+    .account {
+      ul {
+        list-style: none;
+      }
     }
   }
 }
