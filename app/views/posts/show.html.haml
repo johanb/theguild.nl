@@ -1,4 +1,5 @@
 %div[@post]
   %h2.post_title= @post.title
-  %footer= time_tag @post.created_at.to_date, pubdate: true, class: 'post_date'
+  .pubdate= time_tag @post.created_at.to_date, pubdate: true, class: 'post_date'
+  .post_summary= markdown @post.summary
   .post_content= markdown @post.body
