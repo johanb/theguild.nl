@@ -1,4 +1,5 @@
 Guild::Application.routes.draw do
+  devise_for :users
 
   get '/subscribed', to: 'static_pages#subscribed'
 
