@@ -21,4 +21,14 @@ describe PostsController do
       expect(assigns(:post)).to eql(post)
     end
   end
+
+  describe 'GET show as Atom' do
+    before { get :index, format: 'atom' }
+    it     { should render_template('index') }
+    it     { should respond_with(:success) }
+
+    it 'assigns posts' do
+      expect(assigns(:posts)).to_not be_nil
+    end
+  end
 end
