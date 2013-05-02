@@ -62,9 +62,13 @@ end
 group :development, :test do
   gem 'rspec-rails',        '~> 2.13'
   gem 'factory_girl_rails', '~> 4.2'
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'spring'
 end
 
 group :test do
   gem 'capybara',           '~> 2.1'
   gem 'shoulda-matchers'
+  gem 'rspec-given'
 end
