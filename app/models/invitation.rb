@@ -11,6 +11,11 @@ class Invitation < ActiveRecord::Base
   private
 
   def send_invitation_email
+    self.token = generate_token
     Notifications.invitation(self).deliver
+  end
+
+  def generate_token
+    Time.now.to_i.to_s(14)
   end
 end

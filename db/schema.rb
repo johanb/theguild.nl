@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130502140640) do
+ActiveRecord::Schema.define(version: 20130502161822) do
 
   create_table "invitations", force: true do |t|
     t.string   "email"
     t.datetime "sent_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "token"
   end
 
 end
