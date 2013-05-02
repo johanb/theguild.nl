@@ -70,6 +70,7 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.7.7)
     kgio (2.8.0)
+    kramdown (1.0.1)
     mail (2.5.3)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -162,9 +163,11 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   factory_girl_rails (~> 4.2)
   foreman
+  haml
   haml-rails
   jbuilder (~> 1.0.1)
   jquery-rails
+  kramdown
   pg
   rails (~> 4.0.0.rc1)
   rspec-rails (~> 2.13)
