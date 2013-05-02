@@ -1,3 +1,9 @@
-Notifications#invitation
+You're invited to join the Guild!
 
-= @greeting + ", find me in app/views/notifications/invitation.text.haml"
+Follow the link to complete the registration of your account:
+
+= user_registration_url(@invitation.token)
+
+Greetings,
+
+Your fellow craftsmen

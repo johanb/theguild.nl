@@ -29,5 +29,6 @@ module Guild
     # required for deployments to Heroku, as the database will not be available
     # yet when you deploy your apps (and hence initialization will fail).
     config.assets.initialize_on_precompile = false
+
   end
 end

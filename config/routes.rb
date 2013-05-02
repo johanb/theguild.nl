@@ -3,6 +3,9 @@ Guild::Application.routes.draw do
   namespace :admin do
     resources :invitations, only: [:index, :create]
   end
+
+  get '/users/register/:token' => 'user_registrations#new', as: :user_registration
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

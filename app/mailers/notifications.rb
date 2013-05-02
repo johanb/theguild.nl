@@ -7,7 +7,7 @@ class Notifications < ActionMailer::Base
   #   en.notifications.invitation.subject
   #
   def invitation(invitation)
-    @greeting = "Hi"
+    @invitation = invitation
 
     mail to: invitation.email
   end
