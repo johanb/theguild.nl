@@ -45,7 +45,7 @@ describe "Browse recent blog posts" do
 
     it 'highlights the first post with a special summary' do
       visit '/'
-      expect(page).to have_css('.post .post_summary', count: 1)
+      expect(page).to have_css(".post#post_#{posts.first.id} .post_summary", count: 1)
     end
   end
 end
