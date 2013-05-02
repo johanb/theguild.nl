@@ -1,3 +1,4 @@
-%li[post]
+%article[post, 'highlighted']
   %h2.post_title= link_to post.title, post, rel: 'bookmark'
   .pubdate= time_tag post.created_at.to_date, pubdate: true, class: 'post_date'
+  .post_summary= markdown post.summary

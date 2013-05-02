@@ -2,9 +2,17 @@ require 'spec_helper'
 
 describe PostsController do
   describe 'GET index' do
-    before { get :index }
-    it     { should render_template('index') }
-    it     { should respond_with(:success) }
+    before do
+      Post.stub(:all).and_return(%w[foo bar])
+      get :index
+    end
+
+    it { should render_template('index') }
+    it { should respond_with(:success) }
+
+    it 'assigns latest post' do
+      expect(assigns(:latest_post)).to_not be_nil
+    end
 
     it 'assigns posts' do
       expect(assigns(:posts)).to_not be_nil
