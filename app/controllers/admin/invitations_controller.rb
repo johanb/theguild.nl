@@ -7,8 +7,14 @@ class Admin::InvitationsController < ApplicationController
   end
 
   def create
-    Invitation.create invitation_params
-    redirect_to admin_invitations_path
+    invitation = Invitation.new invitation_params
+    if invitation.save
+      flash[:notice] = "Invitation sent to #{invitation.email}"
+      redirect_to admin_invitations_path
+    else
+      @new_invite = invitation
+      render :index
+    end
   end
 
   private
