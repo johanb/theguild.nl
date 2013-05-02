@@ -3,16 +3,17 @@ require 'spec_helper'
 describe Invitation do
 
   describe 'validations' do
-    let(:invitiation) { described_class.new }
-    subject { invitiation.errors }
 
     before do
-      invitiation.valid?
+      described_class.create email: 'valid@email.address'
+      subject.valid?
     end
 
     it 'validates email' do
-      subject[:email].should include "invalid email address"
+      subject.errors[:email].should include "invalid email address"
     end
+
+    it { should validate_uniqueness_of :email }
   end
 
   describe 'invitation email' do
