@@ -1,1 +1,5 @@
-%section.events There are no events yet.
+%section.events
+  - if @upcoming_event
+    = @upcoming_event.name
+  - else
+    There are no events yet.

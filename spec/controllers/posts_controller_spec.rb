@@ -1,13 +1,32 @@
 require 'spec_helper'
 
 describe PostsController do
+  let(:event_stub) { double }
+
+  before do
+    Event.stub(:next_upcoming).and_return(event_stub)
+  end
+
   describe 'GET index' do
-    before { get :index }
-    it     { should render_template('index') }
-    it     { should respond_with(:success) }
+    def make_request
+      get :index
+    end
+
+    context 'response' do
+      before { make_request }
+      it     { should render_template('index') }
+      it     { should respond_with(:success) }
+    end
 
     it 'assigns posts' do
+      make_request
       expect(assigns(:posts)).to_not be_nil
+    end
+
+    it 'assigns upcoming event' do
+      Event.should_receive(:next_upcoming).and_return(event_stub)
+      make_request
+      expect(assigns(:upcoming_event)).to be(event_stub)
     end
   end
 
