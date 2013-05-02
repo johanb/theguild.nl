@@ -8,7 +8,7 @@ describe 'Mailinglist subscription' do
   it "shows the subscription form" do
     visit '/'
 
-    within('.subscribe') do
+    within('.subscription') do
       expect(page).to have_css('form[action="http://newsletter.kabisa.nl/t/r/s/jjuisk/"]')
       expect(page).to have_css('input#jjuisk-jjuisk');
     end
