@@ -1,8 +1,8 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @posts          = Post.all
     @upcoming_event = Event.next_upcoming
-    @recent_events = Event.recent
+    @recent_events  = Event.recent
   end
 
   def show
