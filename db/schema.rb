@@ -17,9 +17,9 @@ ActiveRecord::Schema.define(version: 20130501165715) do
   enable_extension "plpgsql"
 
   create_table "posts", force: true do |t|
-    t.string   "title"
-    t.string   "summary"
-    t.text     "body"
+    t.string   "title",      null: false
+    t.string   "summary",    null: false
+    t.text     "body",       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
