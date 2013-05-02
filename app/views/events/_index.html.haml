@@ -2,9 +2,8 @@
   - if @upcoming_event || @recent_events.any?
     %ul
       - if @upcoming_event
-        %li[@upcoming_event, :upcoming]= @upcoming_event.name
-      - @recent_events.each do |event|
-        %li[event]= event.name
+        = render partial: 'events/upcoming_event', object: @upcoming_event, as: :event
+      = render @recent_events
 
   - else
     There are no events yet.
