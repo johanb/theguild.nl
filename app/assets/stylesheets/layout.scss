@@ -1,0 +1,64 @@
+header {
+  @include grid-row;
+
+  .title {
+    @include grid-column(12);
+
+    margin-top: 40px;
+
+    .logo {
+      float: left;
+      margin-right: 32px;
+
+      img {
+        max-width: 150px; 
+        border: none;
+      }
+    }
+
+    h1 {
+      font-family: 'Stratum No1';
+      font-weight: bold;
+
+      font-size: 3em;
+      line-height: 1.2em;
+
+      color: $header-font-color;
+
+      padding-top: 0.3em;
+
+      span {
+        display: block;
+        font-size: 0.7em;
+        color: $subheader-font-color;
+      }
+    }
+  }
+}
+
+.main {
+  @include grid-row;
+
+  section.content {
+    @include grid-column(12);
+  }
+}
+
+footer {
+  @include grid-row;
+
+  margin-top: 8em;
+  margin-bottom: 5em;
+
+  font-size: $small-font-size;
+  color: $small-font-color;
+
+  .footer {
+    @include grid-column(12);
+
+    .block {
+      text-align: center;
+      margin-bottom: 3em;
+    }
+  }
+}

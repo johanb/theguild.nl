@@ -16,6 +16,17 @@
     = javascript_include_tag "vendor/custom.modernizr"
 
   %body
-    = yield
+    %header
+      .title
+        .logo= image_tag('theguild.png')
+        %h1
+          The Guild of Software Artisans'
+          %span Masterclass in Development and Geekery
+
+    .main
+      %section.content
+        = yield
+
+    = render 'footer'
 
   = javascript_include_tag "application", "data-turbolinks-track" => true

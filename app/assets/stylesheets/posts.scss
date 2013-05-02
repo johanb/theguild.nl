@@ -1,0 +1,50 @@
+.posts {
+  .post.highlight {
+    margin-top: 2em;
+    margin-bottom: 1.5em;
+
+    padding: 8px;
+
+    border-radius: 6px;
+    background-color: #ffeaea;
+
+    h2.post_title {
+      display: inline;
+
+      font-family: 'Stratum No1';
+      font-size: 160%;
+    
+      margin-bottom: 0;
+    }
+
+    .pubdate {
+      display: inline;
+      font-size: 90%;
+      color: $subheader-font-color;
+    }
+
+    .post_summary {
+      font-style: italic;
+    }
+  }
+
+  ul.archive {
+    padding: 8px;
+
+    li {
+      list-style: none;
+
+      h2 {
+        display: inline;
+        font-family: 'Stratum No1';
+        font-size: 120%;
+      }
+
+      .pubdate {
+        display: inline;
+        font-size: 90%;
+        color: $subheader-font-color;
+      }
+    }
+  }
+}
