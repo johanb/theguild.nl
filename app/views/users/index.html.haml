@@ -1,0 +1,17 @@
+%h1 Users
+
+%p.user_count= pluralize(@user_count, 'user')
+
+- if @users.any?
+  %table.users
+    %thead
+      %tr
+        %th Username
+        %th Sign ins
+        %th Last seen
+        %th Since
+    %tbody
+      = render @users
+  = paginate @users
+- else
+  %p.placeholder There are no users yet.
