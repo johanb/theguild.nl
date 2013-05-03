@@ -5,5 +5,9 @@ FactoryGirl.define do
     sequence(:email) { |n| "example#{n}@example.com" }
     password 'foobarbaz'
     password_confirmation { password }
+
+    trait :admin do
+      admin true
+    end
   end
 end
