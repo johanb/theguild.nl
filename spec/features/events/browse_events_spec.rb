@@ -42,10 +42,12 @@ describe 'Listing events' do
     end
   end
 
-
-
-  context 'Latest event' do
-
+  context 'specific event page' do
+    it 'links to the event page' do
+      create :event, name: 'Event foo bar'
+      visit '/'
+      click_link 'Event foo bar'
+      expect(page).to have_content('Event foo bar')
+    end
   end
-  context 'Specific event'
 end
