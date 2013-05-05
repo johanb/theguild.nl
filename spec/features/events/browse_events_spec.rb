@@ -13,23 +13,28 @@ describe 'Listing events' do
   end
 
   context 'Upcoming events scheduled' do
-    let(:first_event_name) { 'Some name of upcoming event' }
-    let!(:first)           { create(:event, name: first_event_name, scheduled_at: Date.today + 1) }
-    let!(:second)          { create(:event, scheduled_at: Date.today + 10) }
+    context 'when there is an upcoming event' do
+      let(:first_event_name) { 'Some name of upcoming event' }
+      let!(:first)           { create(:event, name: first_event_name, scheduled_at: Date.today + 1) }
+      let!(:second)          { create(:event, scheduled_at: Date.today + 10) }
 
-    it 'displays the earliest upcoming event' do
-      visit '/'
+      it 'displays the earliest upcoming event' do
+        visit '/'
 
-      within '.events .upcoming_event' do
-        expect(page).to have_content(first_event_name)
+        within '.events .upcoming_event' do
+          expect(page).to have_content(first_event_name)
+        end
+      end
+    end
+
+    context 'when there is no upcoming event' do
+      it 'does not display an upcoming event' do
+        visit '/'
+        expect(page).to have_no_css('.events .upcoming_event')
       end
     end
   end
 
-  # Scenario: Showing passed events
-  # Given there are many events in the past
-  # When I go to the home page
-  # Then I should see the 5 latest events
   context 'Showing passed events' do
     let!(:events)         { Array.new(6) { |i| create(:event, scheduled_at: (i + 1).days.ago) } }
     let!(:earliest_event) { events.last }
