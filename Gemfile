@@ -52,7 +52,7 @@ gem 'unicorn'
 # gem 'debugger', group: [:development, :test]
 
 gem 'haml'
-
+gem 'devise', github: 'plataformatec/devise', branch: 'rails4'
 gem 'foreman'
 
 group :development do

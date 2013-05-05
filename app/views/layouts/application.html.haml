@@ -1,11 +1,41 @@
 !!!
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
 %html
   %head
     %meta(charset='utf-8')
+    %meta(name='viewport' content='width=device-width, initial-scale=1.0')
+
     %title The Guild
+
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
-    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = auto_discovery_link_tag :atom, feed_url
     = csrf_meta_tags
 
+    = javascript_include_tag "vendor/custom.modernizr"
+
   %body
-    = yield
+    %header
+      .title
+        .logo= link_to image_tag('theguild.png'), '/'
+        %h1
+          The Guild of Software Artisans'
+          %span Masterclass in Development and Geekery
+
+    - if flash[:notice]
+      .flash#flash-notice= flash[:notice]
+    - if flash[:alert]
+      .flash#flash-alert= flash[:alert]
+
+    .main
+      %section.content
+        = yield
+
+      %aside.sidebar
+        = render 'subscription'
+        = render 'account'
+
+    = render 'footer'
+
+  = javascript_include_tag "application", "data-turbolinks-track" => true

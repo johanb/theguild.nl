@@ -1,0 +1,70 @@
+.post {
+  h2 {
+    margin-bottom: 0;
+  }
+
+  .pubdate {
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+  }
+
+  .post_summary {
+    p {
+      font-style: italic;
+      font-weight: bold;
+    }
+  }
+
+  .post_content {
+  }
+}
+
+.posts {
+  .highlighted_post {
+    margin-bottom: 1.5em;
+
+    padding: 16px 8px 4px 8px;
+
+    border-radius: 6px;
+    background-color: #ffeaea;
+
+    h2.post_title {
+      display: inline;
+
+      font-family: 'Stratum No1';
+      font-size: 160%;
+    
+      margin-bottom: 0;
+    }
+
+    .pubdate {
+      display: inline;
+      font-size: 90%;
+      color: $subheader-font-color;
+    }
+
+    .post_summary {
+      font-style: italic;
+    }
+  }
+
+  ul.archive {
+    padding: 8px;
+
+    li {
+      list-style: none;
+
+      h2 {
+        display: inline;
+        font-family: 'Stratum No1';
+        font-size: 120%;
+      }
+
+      .pubdate {
+        display: inline;
+        font-size: 90%;
+        color: $subheader-font-color;
+      }
+    }
+  }
+}

@@ -1,5 +1,13 @@
-- if @posts.any?
-  = render @posts
-- else
-  %p There are no blog posts yet.
+.posts
+  - if @latest_post || @posts.any?
+    - if @latest_post
+      = render partial: 'latest_post', object: @latest_post, as: :post
+
+    - if @posts.any?
+      %ul.archive
+        = render @posts
+
+  - else
+    %p There are no blog posts yet.
+
 = render partial: 'events/index'

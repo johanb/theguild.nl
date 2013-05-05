@@ -9,6 +9,10 @@ describe PostsController do
   end
 
   describe 'GET index' do
+    before do
+      Post.stub(:all).and_return(%w[foo bar])
+    end
+
     def make_request
       get :index
     end
@@ -17,6 +21,11 @@ describe PostsController do
       before { make_request }
       it     { should render_template('index') }
       it     { should respond_with(:success) }
+    end
+
+    it 'assigns latest post' do
+      make_request
+      expect(assigns(:latest_post)).to_not be_nil
     end
 
     it 'assigns posts' do
@@ -46,6 +55,16 @@ describe PostsController do
 
     it 'assigns post' do
       expect(assigns(:post)).to eql(post)
+    end
+  end
+
+  describe 'GET show as Atom' do
+    before { get :index, format: 'atom' }
+    it     { should render_template('index') }
+    it     { should respond_with(:success) }
+
+    it 'assigns posts' do
+      expect(assigns(:posts)).to_not be_nil
     end
   end
 end

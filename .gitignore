@@ -24,3 +24,4 @@ crash.log
 config/database.yml
 doc
 .yardoc
+.rvmrc
