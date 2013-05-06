@@ -1,8 +1,10 @@
-%section.events
+.events
+  %h3 Calendar
   - if @upcoming_event || @recent_events.any?
+    - if @upcoming_event
+      = render partial: 'events/upcoming_event', object: @upcoming_event, as: :event
+
     %ul
-      - if @upcoming_event
-        = render partial: 'events/upcoming_event', object: @upcoming_event, as: :event
       = render @recent_events
 
   - else

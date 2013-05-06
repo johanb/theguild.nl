@@ -1,10 +1,6 @@
-%footer
-  .footer
-    .block#sponsors
-      = link_to image_tag('kabisa-logo.png', size: '149x50'), 'http://kabisa.nl'
-      %br
-      The Guild is a Kabisa initiative.
-
-    .block#copyright
-      Copy-Love #{Time.now.year} The Guild Staff
+%footer{ role: 'contentinfo' }
+  #sponsors
+    = link_to image_tag('kabisa-logo.png', size: '149x50'), 'http://kabisa.nl'
+    %p The Guild is a Kabisa initiative.
+  %p Copy-Love #{Time.now.year} The Guild Staff
 
