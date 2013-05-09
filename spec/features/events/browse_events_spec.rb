@@ -6,7 +6,7 @@ describe 'Listing events' do
 
     it 'displays a message when no events are available' do
       visit '/'
-      within 'section.events' do
+      within '.events' do
         expect(page).to have_content('There are no events yet.')
       end
     end
