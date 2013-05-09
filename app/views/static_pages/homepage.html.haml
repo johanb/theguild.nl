@@ -2,7 +2,7 @@
   %h3 Blog
   - if @latest_post || @posts.any?
     - if @latest_post
-      = render partial: 'latest_post', object: @latest_post, as: :post
+      = render partial: 'posts/latest_post', object: @latest_post, as: :post
 
     - if @posts.any?
       .archive

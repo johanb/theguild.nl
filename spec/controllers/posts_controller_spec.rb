@@ -1,26 +1,6 @@
 require 'spec_helper'
 
 describe PostsController do
-  describe 'GET index' do
-    let(:event)         { double }
-    let(:recent_events) { [] }
-    let(:posts)         { %w[foo bar] }
-
-    before do
-      Event.stub(:next_upcoming).and_return(event)
-      Event.stub(:recent).and_return(recent_events)
-      Post.stub(:all).and_return(posts)
-    end
-
-    before { get :index }
-    it     { should render_template('index') }
-    it     { should respond_with(:success) }
-    it     { should assign_to(:latest_post).with('foo') }
-    it     { should assign_to(:posts).with(posts) }
-    it     { should assign_to(:recent_events).with(recent_events) }
-    it     { should assign_to(:upcoming_event).with(event) }
-  end
-
   describe 'GET show' do
     let(:post) { double }
     before     { Post.stub(:find).and_return(post) }
@@ -30,7 +10,7 @@ describe PostsController do
     it         { should assign_to(:post).with(post) }
   end
 
-  describe 'GET show as Atom' do
+  describe 'GET index as Atom' do
     before { get :index, format: 'atom' }
     it     { should render_template('index') }
     it     { should respond_with(:success) }

@@ -1,11 +1,8 @@
 class PostsController < ApplicationController
   def index
-    @posts          = Post.all
-    @upcoming_event = Event.next_upcoming
-    @recent_events  = Event.recent
+    @posts = Post.all
 
     respond_to do |format|
-      format.html { @latest_post = @posts.shift }
       format.atom
     end
   end
