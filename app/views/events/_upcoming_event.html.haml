@@ -1,0 +1,3 @@
+%article[event, :upcoming]
+  .event_date= time_tag event.scheduled_at.to_date
+  %h2= link_to event.name, event

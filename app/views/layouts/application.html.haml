@@ -7,7 +7,12 @@
     %meta(charset='utf-8')
     %meta(name='viewport' content='width=device-width, initial-scale=1.0')
 
-    %title The Guild
+    - if content_for?(:title)
+      %title
+        = yield(:title)
+        &bull; The Guild
+    - else
+      %title The Guild
 
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = auto_discovery_link_tag :atom, feed_url
@@ -16,26 +21,26 @@
     = javascript_include_tag "vendor/custom.modernizr"
 
   %body
-    %header
-      .title
-        .logo= link_to image_tag('theguild.png'), '/'
+    #page
+      %header{ role: 'banner' }
+        = link_to image_tag('theguild.png'), root_url, class: 'logo'
         %h1
-          The Guild of Software Artisans'
-          %span Masterclass in Development and Geekery
+          The Guild of Software Artisans&rsquo;
+          %small Masterclass in Development and Geekery
 
-    - if flash[:notice]
-      .flash#flash-notice= flash[:notice]
-    - if flash[:alert]
-      .flash#flash-alert= flash[:alert]
+      - if flash[:notice]
+        .alert-box.success= flash[:notice]
+      - if flash[:alert]
+        .alert-box.alert= flash[:alert]
 
-    .main
-      %section.content
-        = yield
+      .main
+        %section{ role: 'main' }
+          = yield
 
-      %aside.sidebar
-        = render 'subscription'
-        = render 'account'
+        %aside{ role: 'complementary' }
+          = render 'subscription'
+          = render 'account'
 
-    = render 'footer'
+      = render 'footer'
 
-  = javascript_include_tag "application", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true

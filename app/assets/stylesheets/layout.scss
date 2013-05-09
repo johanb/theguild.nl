@@ -1,99 +1,43 @@
-header {
+#page {
   @include grid-row;
-
-  .title {
-    @include grid-column(12);
-
-    margin-top: 40px;
-
-    .logo {
-      float: left;
-      margin-right: 32px;
-
-      img {
-        max-width: 150px; 
-        border: none;
-      }
-    }
-
-    h1 {
-      font-family: 'Stratum No1';
-      font-weight: bold;
-
-      font-size: 3em;
-      line-height: 1.2em;
-
-      color: $header-font-color;
-
-      padding-top: 0.3em;
-
-      span {
-        display: block;
-        font-size: 0.7em;
-        color: $subheader-font-color;
-      }
-    }
-  }
 }
 
-.flash {
+header {
   @include grid-row;
-  padding: 8px;
-  margin-top: 2em;
-  border-radius: 6px;
+  margin-top: lines(2);
 
-  &#flash-notice {
-    background-color: #eaffea;
+  h1 {
+    @include grid-column(10);
+
+    small {
+      display: block;
+      line-height: $header-line-height;
+    }
   }
 
-  &#flash-alert {
-    background-color: #ffeaea;
+  .logo {
+    @include grid-column(2);
+    margin-top: lines(-1);
+    margin-bottom: lines(1);
   }
 }
 
 .main {
   @include grid-row;
-
-  margin-top: 2em;
-
-  section.content {
-    @include grid-column(9);
-
-    h1, h2, h3, h4, h5, h6 {
-      font-family: 'Stratum No1';
-    }
-  }
-
-  aside.sidebar {
-    @include grid-column(3);
-
-    h2 {
-      font-size: 1em;
-    }
-
-    .account {
-      ul {
-        list-style: none;
-      }
-    }
-  }
 }
 
-footer {
-  @include grid-row;
+section[role="main"] {
+  @include grid-column(9);
+}
 
-  margin-top: 8em;
-  margin-bottom: 5em;
+aside[role="complementary"] {
+  @include grid-column(3);
+}
 
+footer[role="contentinfo"] {
+  margin-top: lines(3);
+  margin-bottom: lines(1);
   font-size: $small-font-size;
   color: $small-font-color;
-
-  .footer {
-    @include grid-column(12);
-
-    .block {
-      text-align: center;
-      margin-bottom: 3em;
-    }
-  }
+  text-align: center;
 }

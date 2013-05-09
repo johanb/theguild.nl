@@ -7,5 +7,6 @@ Guild::Application.routes.draw do
 
   get '/blog.atom' => 'posts#index', format: 'atom', as: 'feed'
 
-  root to: "posts#index"
+  resources :events
+  root to: "static_pages#homepage"
 end

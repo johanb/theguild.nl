@@ -67,4 +67,5 @@ end
 group :test do
   gem 'capybara',           '~> 2.1'
   gem 'shoulda-matchers'
+  gem 'timecop'
 end
