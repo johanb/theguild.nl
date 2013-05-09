@@ -4,6 +4,9 @@ FactoryGirl.define do
       "event #{n}"
     end
 
+    season 1
+    episode 2
+
     scheduled_at Time.now
   end
 end

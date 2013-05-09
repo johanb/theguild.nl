@@ -35,4 +35,20 @@ describe Event do
       should_not include(event)
     end
   end
+
+  it { should validate_presence_of(:season) }
+  it { should validate_presence_of(:episode) }
+  it { should validate_numericality_of(:season).only_integer }
+  it { should validate_numericality_of(:episode).only_integer }
+
+  describe '#to_param' do
+    subject { build_stubbed(:event, season: 1, episode: 3) }
+    its(:to_param) { should eql('s1e3') }
+  end
+
+  it 'finds events by slug notation' do
+    event = create :event, season: 1, episode: 2
+    expect(Event.find('s1e2')).to eql(event)
+  end
+
 end
