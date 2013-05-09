@@ -54,6 +54,7 @@ gem 'unicorn'
 gem 'haml'
 gem 'devise', github: 'plataformatec/devise', branch: 'rails4'
 gem 'foreman'
+gem 'kaminari'
 
 group :development do
   gem 'haml-rails'

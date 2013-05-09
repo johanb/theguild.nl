@@ -39,5 +39,7 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
 
+  config.include AuthenticationHelpers, type: :feature
+  config.include Devise::TestHelpers, type: :controller
   config.include Matchers
 end
