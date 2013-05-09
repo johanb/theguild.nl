@@ -11,7 +11,7 @@ describe UsersController do
     end
 
     context 'when logged in' do
-      before(:all) { @user = create(:user) }
+      before(:all) { @user = create(:user, :admin) }
       after(:all)  { @user.destroy }
 
       before do
