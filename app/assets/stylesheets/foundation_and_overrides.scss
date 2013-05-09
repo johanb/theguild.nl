@@ -21,6 +21,10 @@ $em-base: 16px !default;
   @return $pxWidth / $em-base * 1em;
 }
 
+@function lines($n) {
+  @return $em-base * $paragraph-line-height * $n;
+}
+
 //// Various global styles
 
 // $body-bg: #fff;
@@ -115,7 +119,7 @@ $primary-color: #d00000;
 
 //// Heading font styles
 
-// $header-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$header-font-family: 'Stratum No1', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $header-font-weight: bold;
 // $header-font-style: normal;
 // $header-font-color: #222;
