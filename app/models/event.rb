@@ -4,6 +4,9 @@ class Event < ActiveRecord::Base
   scope :past,   -> { where('scheduled_at < ?', Date.today) }
   scope :recent, -> { past.limit(5).order('scheduled_at desc') }
 
+  attr_accessor :season, :episode
+  before_create :generate_slug
+
   validates :season, :episode,
     presence: true,
     numericality: { only_integer: true, minimum: 1 }
@@ -14,10 +17,16 @@ class Event < ActiveRecord::Base
 
   def self.find(param)
     return super unless param =~ /\As(\d+)e(\d+)\Z/i
-    where(season: $1, episode: $2).first!
+    where(slug: "s#{$1}e#{$2}").first!
   end
 
   def to_param
-    's%se%s' % [season, episode]
+    slug
+  end
+
+  private
+
+  def generate_slug
+    self.slug = 's%se%s' % [season, episode]
   end
 end

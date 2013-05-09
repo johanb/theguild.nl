@@ -1,6 +1,6 @@
 class AddSeasonAndEpisodeToEvents < ActiveRecord::Migration
   def change
-    add_column :events, :season, :integer, null: false
-    add_column :events, :episode, :integer, null: false
+    add_column :events, :slug, :string, null: false
+    add_index :events, :slug, unique: true
   end
 end

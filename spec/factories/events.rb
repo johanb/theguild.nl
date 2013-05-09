@@ -5,7 +5,7 @@ FactoryGirl.define do
     end
 
     season 1
-    episode 2
+    sequence :episode
 
     scheduled_at Time.now
   end

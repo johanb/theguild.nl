@@ -42,7 +42,7 @@ describe Event do
   it { should validate_numericality_of(:episode).only_integer }
 
   describe '#to_param' do
-    subject { build_stubbed(:event, season: 1, episode: 3) }
+    subject { create(:event, season: 1, episode: 3) }
     its(:to_param) { should eql('s1e3') }
   end
 

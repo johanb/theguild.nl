@@ -21,9 +21,10 @@ ActiveRecord::Schema.define(version: 20130509103817) do
     t.datetime "scheduled_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "season",       null: false
-    t.integer  "episode",      null: false
+    t.string   "slug",         null: false
   end
+
+  add_index "events", ["slug"], name: "index_events_on_slug", unique: true, using: :btree
 
   create_table "posts", force: true do |t|
     t.string   "title",      null: false
