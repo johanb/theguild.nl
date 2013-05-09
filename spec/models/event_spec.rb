@@ -51,4 +51,9 @@ describe Event do
     expect(Event.find('s1e2')).to eql(event)
   end
 
+  describe 'attendees' do
+    it { should have_many(:attendances).dependent(:destroy) }
+    it { should have_many(:attendees) }
+  end
+
 end
