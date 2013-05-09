@@ -7,7 +7,7 @@ describe 'Browsing the list of members' do
   end
 
   def have_flash_alert(msg)
-    have_css('#flash-alert', text: msg)
+    have_css('.alert-box.alert', text: msg)
   end
 
   context 'when not logged in' do
