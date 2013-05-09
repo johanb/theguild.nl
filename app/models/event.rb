@@ -1,5 +1,8 @@
 class Event < ActiveRecord::Base
 
+  has_many :attendees, source: :user, through: :attendances
+  has_many :attendances, dependent: :destroy
+
   scope :future, -> { where('scheduled_at >= ?', Date.today) }
   scope :past,   -> { where('scheduled_at < ?', Date.today) }
   scope :recent, -> { past.limit(5).order('scheduled_at desc') }
