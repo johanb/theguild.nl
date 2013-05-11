@@ -1,5 +1,11 @@
 - title event.name
 %h1.event_title= event.name
 .event_description= event.description
+.event_programme
+  - if programme_items.any?
+    %ol
+      = render programme_items
+  - else
+  %p.placeholder There are no confirmed sessions yet.
 
 = render partial: 'attendances/attendees', locals: { event: event, attendees: attendees }
