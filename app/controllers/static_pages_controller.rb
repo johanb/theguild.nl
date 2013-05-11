@@ -1,4 +1,6 @@
 class StaticPagesController < ApplicationController
+  decorates_assigned :posts, :latest_post, :upcoming_event, :recent_events
+
   def homepage
     @posts          = Post.all
     @latest_post    = @posts.shift

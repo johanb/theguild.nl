@@ -55,6 +55,7 @@ gem 'haml'
 gem 'devise', github: 'plataformatec/devise', branch: 'rails4'
 gem 'foreman'
 gem 'kaminari'
+gem 'draper', '~> 1.2'
 
 group :development do
   gem 'haml-rails'

@@ -1,5 +1,5 @@
-- title @post.title
-%div[@post]
-  .pubdate= time_tag @post.created_at.to_date, pubdate: true, class: 'post_date'
-  %h2.post_title= @post.title
-  .post_content= markdown @post.body
+- title post.title
+%div[post]
+  = post.created_at
+  %h2.post_title= post.title
+  .post_content= post.body

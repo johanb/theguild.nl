@@ -1,16 +1,4 @@
 - title @event.name
 %h1= @event.name
 
-- if @attendees.any?
-  %h3= pluralize @attendees.count, 'attendees'
-  %ol.attendees
-    - @attendees.each do |attendee|
-      %li.attendee= attendee.email
-- else
-  %p.placeholder No one is attending yet
-
-- if user_signed_in?
-  - if @attendees.map(&:id).include?(current_user.id)
-    = button_to "I won't attend", event_attendance_url(@event), method: :delete
-  - else
-    = button_to "I'm attending", event_attendance_url(@event)
+= render partial: 'attendances/attendees', locals: { event: @event, attendees: @attendees }
