@@ -1,11 +1,11 @@
 .events
   %h3 Calendar
-  - if @upcoming_event || @recent_events.any?
-    - if @upcoming_event
-      = render partial: 'events/upcoming_event', object: @upcoming_event, as: :event
+  - if upcoming_event || recent_events.any?
+    - if upcoming_event
+      = render partial: 'events/upcoming_event', object: upcoming_event, as: :event
 
     %ul
-      = render @recent_events
+      = render recent_events
 
   - else
     There are no events yet.

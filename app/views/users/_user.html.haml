@@ -1,6 +1,6 @@
 %tr[user]
   %th{ scope: 'row' }= user.email
   %td= user.sign_in_count
-  %td= l user.last_sign_in_at, format: :short unless user.last_sign_in_at.nil?
-  %td= l user.created_at, format: :short
-  %td= "&#10004;".html_safe if user.admin?
+  %td= user.last_sign_in_at
+  %td= user.created_at
+  %td= user.admin

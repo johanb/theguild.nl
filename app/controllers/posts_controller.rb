@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  decorates_assigned :post
+
   def index
     @posts = Post.all
 

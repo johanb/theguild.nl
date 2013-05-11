@@ -1,0 +1,13 @@
+- if attendees.any?
+  %h3= pluralize attendees.count, 'attendee'
+  %ol.attendees
+    - attendees.each do |attendee|
+      %li.attendee= attendee.email
+- else
+  %p.placeholder No one is attending yet
+
+- if user_signed_in?
+  - if attendees.include?(current_user)
+    = button_to "I won't attend", event_attendance_url(event), method: :delete
+  - else
+    = button_to "I'm attending", event_attendance_url(event)
