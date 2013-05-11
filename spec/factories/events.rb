@@ -4,6 +4,8 @@ FactoryGirl.define do
       "event #{n}"
     end
 
+    description 'Lorem ipsum dolor sit amet'
+
     season 1
     sequence :episode
 

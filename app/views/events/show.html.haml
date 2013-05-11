@@ -1,4 +1,5 @@
-- title @event.name
-%h1= @event.name
+- title event.name
+%h1.event_title= event.name
+.event_description= event.description
 
-= render partial: 'attendances/attendees', locals: { event: @event, attendees: @attendees }
+= render partial: 'attendances/attendees', locals: { event: event, attendees: attendees }

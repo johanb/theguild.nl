@@ -8,4 +8,8 @@ class EventDecorator < ApplicationDecorator
   def scheduled_at
     h.time_tag model.scheduled_at.to_date
   end
+
+  def description
+    h.markdown model.description
+  end
 end
