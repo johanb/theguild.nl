@@ -49,6 +49,8 @@ ActiveRecord::Schema.define(version: 20130511103254) do
     t.string   "title",                  null: false
     t.integer  "event_id"
     t.integer  "position",   default: 0
+    t.text     "resources"
+    t.integer  "author_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

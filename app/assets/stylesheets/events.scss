@@ -18,3 +18,41 @@
   text-transform: uppercase;
   letter-spacing: 1px;
 }
+
+.event_programme {
+  ol {
+    list-style: none;
+
+    .resources {
+      @extend .inline-list;
+      font-size: 12px;
+      margin-bottom: 0;
+    }
+
+    & > li {
+      margin: 0;
+      padding: 0 0 lines(.5) 35px;
+      background: image-url('programme-bullets.png') no-repeat 0px -97px;
+      background-size: 16px 218px;
+
+      h5 {
+        margin: 0;
+
+        .programme_item_author {
+          display: block;
+          color: $small-font-color;
+          font-weight: normal;
+          font-size: 14px;
+        }
+      }
+
+      &:first-child {
+        background: image-url('programme-bullets.png') no-repeat 0px 5px;
+      }
+
+      &:last-child {
+        background: image-url('programme-bullets.png') no-repeat 0px -197px;
+      }
+    }
+  }
+}

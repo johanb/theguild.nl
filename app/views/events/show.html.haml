@@ -6,6 +6,6 @@
     %ol
       = render programme_items
   - else
-  %p.placeholder There are no confirmed sessions yet.
+    %p.placeholder There are no confirmed sessions yet.
 
 = render partial: 'attendances/attendees', locals: { event: event, attendees: attendees }
