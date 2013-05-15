@@ -1,0 +1,9 @@
+%li[programme_item]
+  %h5
+    %span.programme_item_title= programme_item.title
+    - if programme_item.author
+      %span.programme_item_author by #{programme_item.author_name}
+  - if programme_item.resources.any?
+    %ul.resources
+      - programme_item.resources.each do |title, url|
+        %li= link_to title, url

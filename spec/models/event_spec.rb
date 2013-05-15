@@ -56,4 +56,8 @@ describe Event do
     it { should have_many(:attendees) }
   end
 
+  describe "programme items" do
+    it { should have_many(:programme_items).dependent(:destroy) }
+  end
+
 end

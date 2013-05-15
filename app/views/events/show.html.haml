@@ -1,4 +1,17 @@
-- title @event.name
-%h1= @event.name
+- title event.name
+%h1.event_title= event.name
+.event_description= event.description
+.event_photos
+  %ul.clearing-thumbs{ :'data-clearing' => true }
+    - 6.times do |i|
+      %li
+        %a{ href: 'http://placekitten.com/600/400' }
+          %img.th{ src: 'http://placekitten.com/100/60' }
+.event_programme
+  - if programme_items.any?
+    %ol
+      = render programme_items
+  - else
+    %p.placeholder There are no confirmed sessions yet.
 
-= render partial: 'attendances/attendees', locals: { event: @event, attendees: @attendees }
+= render partial: 'attendances/attendees', locals: { event: event, attendees: attendees }
