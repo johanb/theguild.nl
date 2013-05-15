@@ -15,3 +15,15 @@
     %p.placeholder There are no confirmed sessions yet.
 
 = render partial: 'attendances/attendees', locals: { event: event, attendees: attendees }
+
+- unless user_signed_in?
+  %h3 Want to join The Guild?
+  %p
+    Do you want to become a member of The Guild and attend this event? The
+    Guild is a members-only organisation, but you can apply here to become a
+    member.
+
+  = simple_form_for [event, event.applicants.build] do |f|
+    = f.input :email
+    = f.submit 'Request Invitation', class: 'button small'
+    %p Already a member? #{link_to 'Sign in', new_user_session_path} instead!

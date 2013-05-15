@@ -14,6 +14,7 @@ Guild::Application.routes.draw do
 
   resources :events do
     resource :attendance
+    resources :applicants
   end
   root to: "static_pages#homepage"
 end

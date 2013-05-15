@@ -60,4 +60,8 @@ describe Event do
     it { should have_many(:programme_items).dependent(:destroy) }
   end
 
+  describe "applicants" do
+    it { should have_many(:applicants).dependent(:destroy) }
+  end
+
 end
